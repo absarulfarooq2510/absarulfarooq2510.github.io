@@ -527,6 +527,24 @@
     .project-card.featured { grid-template-columns: 1fr; }
     footer { padding: 3rem 1.5rem; flex-direction: column; }
   }
+
+  /* ── EXPERIENCE ── */
+  .experience-section { background: var(--cream); }
+  .timeline { position: relative; padding-left: 2.5rem; }
+  .timeline::before { content:''; position:absolute; left:0; top:0.5rem; bottom:0; width:1px; background:var(--border); }
+  .timeline-item { position:relative; padding-bottom:3rem; }
+  .timeline-item:last-child { padding-bottom:0; }
+  .timeline-dot { position:absolute; left:-2.9rem; top:0.45rem; width:0.8rem; height:0.8rem; border-radius:50%; background:var(--amber); border:3px solid var(--cream); box-shadow:0 0 0 1px var(--amber); }
+  .timeline-header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.2rem; }
+  .timeline-company { font-family:var(--serif); font-size:1.2rem; font-weight:700; }
+  .timeline-date { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.08em; color:var(--amber); background:rgba(200,130,42,0.1); padding:0.25rem 0.75rem; border-radius:2px; white-space:nowrap; }
+  .timeline-role { font-family:var(--mono); font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:rgba(26,18,8,0.45); margin-bottom:1rem; }
+  .timeline-bullets { list-style:none; display:flex; flex-direction:column; gap:0.65rem; }
+  .timeline-bullets li { font-size:0.88rem; line-height:1.75; color:rgba(26,18,8,0.75); padding-left:1.3rem; position:relative; }
+  .timeline-bullets li::before { content:'->'; position:absolute; left:0; font-family:var(--mono); color:var(--amber); font-size:0.8rem; }
+  .timeline-bullets li strong { color:var(--ink); font-weight:500; }
+  .tl-tag { display:inline-block; font-family:var(--mono); font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; background:rgba(200,130,42,0.12); color:var(--rust); border:1px solid rgba(200,130,42,0.25); padding:0.12rem 0.5rem; border-radius:2px; margin-left:0.6rem; vertical-align:middle; position:relative; top:-1px; }
+
 </style>
 </head>
 <body>
@@ -534,6 +552,7 @@
 <nav>
   <div class="nav-logo">Absar Ul Farooq</div>
   <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#work">Work</a></li>
     <li><a href="#writing">Writing</a></li>
     <li><a href="#philosophy">Philosophy</a></li>
@@ -565,7 +584,7 @@
 
 <!-- STATS -->
 <div class="stats-strip">
-  <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Years PM Experience</span></div>
+  <div class="stat"><span class="stat-num">8+</span><span class="stat-label">Years PM Experience</span></div>
   <div class="stat"><span class="stat-num">AI</span><span class="stat-label">Decision Systems</span></div>
   <div class="stat"><span class="stat-num">L5</span><span class="stat-label">Target Level</span></div>
   <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Tradeoffs Documented</span></div>
@@ -601,6 +620,75 @@
 </section>
 
 <!-- WORK -->
+
+<section id="experience" class="experience-section">
+  <div class="section-label">Career</div>
+  <h2>Work Experience</h2>
+  <p class="section-intro">8+ years building enterprise platforms, API ecosystems, and AI-powered products across SaaS, insurance, and networking.</p>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-header">
+        <div class="timeline-company">e2open <span style="font-size:0.85rem;font-weight:400;font-style:italic;opacity:0.5;">(WiseTech Global)</span> <span class="tl-tag">Current</span></div>
+        <div class="timeline-date">Jun 2025 &mdash; Present</div>
+      </div>
+      <div class="timeline-role">Associate Product Manager</div>
+      <ul class="timeline-bullets">
+        <li>Led end-to-end launch of <strong>Velocity Hub</strong> &mdash; an API-driven logistics data exchange platform; reduced partner onboarding from a <strong>3&ndash;4 week manual process to a 20&ndash;25 minute self-serve workflow</strong> (&gt;99% cycle-time reduction for standard integrations)</li>
+        <li>Automated schema mapping, validation, and ingestion setup &mdash; cutting manual effort from <strong>~3 hours per partner to exception-only handling</strong> (&lt;20% of cases), eliminating ~2.5+ hrs of repetitive ops work per onboarding</li>
+        <li>Defined KPIs (completion rate, validation drop-off, downstream rejection) and implemented schema-level guardrails projected to reduce file rejection from <strong>~60% to &lt;20%</strong> for template-based integrations</li>
+        <li>Led cross-functional coordination across PM, Engineering, UX, and Ops during multi-stream release &mdash; formalizing readiness checkpoints for scalable launch governance</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-header">
+        <div class="timeline-company">ICICI Lombard</div>
+        <div class="timeline-date">Sep 2024 &mdash; May 2025</div>
+      </div>
+      <div class="timeline-role">Senior Product Manager</div>
+      <ul class="timeline-bullets">
+        <li>Owned end-to-end <strong>partner API funnel</strong> (quote &rarr; porting &rarr; proposal &rarr; payment &rarr; endorsement) powering high-volume insurance aggregators in a live, revenue-critical environment</li>
+        <li>Implemented retry-safe proposal handling &mdash; reducing duplicate proposal creation by <strong>~15%</strong> and lowering partner escalations during peak traffic</li>
+        <li>Built API-driven Nil Endorsement journey for low-risk policy updates &mdash; reducing support tickets by <strong>~70%</strong> and saving <strong>~1,000 operational hours/month</strong></li>
+        <li>Built NSTP underwriting dashboards covering <strong>~50% of policies</strong> in conditional flows &mdash; reducing manual status checks and improving partner transparency</li>
+        <li>Led cross-functional RCA of a peak-season discount enforcement gap &mdash; preventing revenue leakage and strengthening server-side rule governance</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-header">
+        <div class="timeline-company">Cisco Systems</div>
+        <div class="timeline-date">Jan 2019 &mdash; Sep 2024</div>
+      </div>
+      <div class="timeline-role">Product Owner &mdash; GenAI (TAC)</div>
+      <ul class="timeline-bullets">
+        <li>Led <strong>0&rarr;1 development</strong> of an AI-powered case intelligence assistant improving productivity across TAC teams (Routing, Security, Observability)</li>
+        <li>Designed <strong>RAG architecture</strong> using vector embeddings and cosine similarity to surface relevant historical cases and generate actionable troubleshooting insights</li>
+        <li>Reduced manual knowledge retrieval time by <strong>40%</strong> (50 min &rarr; 30 min/case), delivering <strong>~60+ hours/month</strong> in team-level efficiency gains</li>
+        <li>Contributed to <strong>25% reduction in support case backlog</strong> by accelerating recurring issue identification and defect pattern recognition</li>
+        <li>Defined phased roadmap (retrieval &rarr; contextual parsing &rarr; pattern detection) with a lean 2-engineer team; implemented guardrails to mitigate LLM hallucination risk</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:rgba(200,130,42,0.3);box-shadow:none;"></div>
+      <div class="timeline-header">
+        <div class="timeline-company">Accenture</div>
+        <div class="timeline-date">Apr 2018 &mdash; Dec 2018</div>
+      </div>
+      <div class="timeline-role">Associate Engineer</div>
+      <ul class="timeline-bullets">
+        <li>Strategic planning and development of advanced network solutions; translated client business and technical requirements into comprehensive network design strategies</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
 <section id="work">
   <div class="section-label">Selected Work</div>
   <h2>Case Studies</h2>
@@ -764,6 +852,10 @@ document.querySelectorAll('.focus-card, .project-card, .article-card, .principle
 });
 </script>
 
+  <!-- HOST BANNER -->
+  <div style="position:fixed;bottom:1rem;right:1rem;z-index:999;background:#1A1208;color:#F5F0E8;font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.08em;padding:0.6rem 1rem;border-radius:3px;opacity:0.75;">
+    💡 Host this file on GitHub Pages or Tiiny.host to share publicly
+  </div>
 
 </body>
 </html>
